@@ -13,6 +13,7 @@
         <block wx:for="{{movieList}}" wx:key="{{index}}">
             <template is="{{item.subject ? 'item-cloumn-subject' : 'item-cloumn'}}" data="{{...item}}" />
         </block>
-        <template is="loading" data="{{shouldLoad}}" />
+        <view wx:if="{{movieList.length==0}}">{{noResult}}</view>
+        <template wx:else is="loading" data="{{shouldLoad}}" />
     </scroll-view>
 </view>
