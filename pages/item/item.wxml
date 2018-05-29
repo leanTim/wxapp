@@ -1,0 +1,14 @@
+<view class="container">
+    <image class="background" src="{{meta.data.images.large}}" mode="aspectFill"></image>
+    <view class="meta">
+        <image class="poster" src="{{meta.data.images.small}}" mode="aspectFill"></image>
+        <text class="title">{{meta.data.title}}（{{meta.data.year}}）</text>
+        <text class="info">评分：{{meta.data.rating.average}}</text>
+        <text class="info">导演：<block wx:for="{{meta.data.directors}}" wx:key="{{item.id}}">{{item.name}}、</block></text>
+        <text class="info">主演：<block wx:for="{{meta.data.casts}}" wx:key="{{item.id}}">{{item.name}}、</block></text>
+    </view>
+    <view class="summary">
+        <text class="label">摘要：</text>
+        <text class="content">{{meta.summary}}</text>
+    </view>
+</view>

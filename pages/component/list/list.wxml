@@ -1,0 +1,59 @@
+<!-- 下面两个是首页的电影列表模板 -->
+<template name="list">
+    <navigator url="../item/item?id={{id}}">
+        <view class="movie-item">
+            <image src="{{images.small}}" />
+            <text>{{title}}</text>
+        </view>
+    </navigator>
+</template>
+<!-- 口碑和北美票房榜返回数据外面多了一层subject -->
+<template name="list-subject">
+    <navigator url="../item/item?id={{subject.id}}">
+        <view class="movie-item">
+            <image src="{{subject.images.small}}" />
+            <text>{{subject.title}}</text>
+        </view>
+    </navigator>
+</template>
+<!-- 点开以后的电影模板 -->
+<template name="item-cloumn">
+    <navigator url="../item/item?id={{id}}">
+        <view class="all-movie-item">
+            <image src="{{images.small}}" />
+            <view class="content">
+                <text class="name">{{title}}</text>
+                <text class="name-year">{{title}}({{year}})</text>
+                <text class="director">导演：{{directors[0].name}}</text>
+            </view>
+            <view class="score">{{rating.average}}</view>
+        </view>
+    </navigator>
+</template>
+
+<!-- 口碑和北美票房榜 -->
+<template name="item-cloumn-subject">
+    <navigator url="../item/item?id={{subject.id}}">
+        <view class="all-movie-item">
+            <image src="{{subject.images.small}}" />
+            <view class="content">
+                <text class="name">{{subject.title}}</text>
+                <text class="name-year">{{subject.title}}({{subject.year}})</text>
+                <text class="director">导演：{{subject.directors[0].name}}</text>
+            </view>
+            <view class="score">{{subject.rating.average}}</view>
+        </view>
+    </navigator>
+</template>
+<!-- 每个列表页用 -->
+<template name="loading">
+    <view class="tips">
+        <view wx:if="{{ shouldLoad }}">
+            <image src="/images/loading.gif" mode="aspectFill" />
+            <text>玩了命的加载中...</text>
+        </view>
+        <view wx:else>
+            <text>没有更多内容了</text>
+        </view>
+    </view>
+</template>

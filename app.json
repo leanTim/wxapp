@@ -1,0 +1,45 @@
+{
+    "pages": [
+        "pages/search/search",
+        "pages/board/board",        
+        "pages/item/item",
+        "pages/list/list",
+        "pages/profile/profile"
+    ],
+    "window": {
+        "navigationBarBackgroundColor": "#35495e",
+        "navigationBarTitleText": "小程序初体验",
+        "navigationBarTextStyle": "black",
+        "backgroundColor": "#f9f9f9"
+    },
+    "tabBar": {
+        "list": [
+            {
+                "text": "榜单",
+                "pagePath": "pages/board/board",
+                "iconPath": "images/board.png",
+                "selectedIconPath": "images/board-actived.png"
+            },
+            {
+                "text": "搜索",
+                "pagePath": "pages/search/search",
+                "iconPath": "images/search.png",
+                "selectedIconPath": "images/search-actived.png"
+            },
+            {
+                "text": "关于我",
+                "pagePath": "pages/profile/profile",
+                "iconPath": "images/profile.png",
+                "selectedIconPath": "images/profile-actived.png"
+            }
+        ],
+        "color": "#666666",
+        "selectedColor": "#000000",
+        "borderStyle": "white",
+        "backgroundColor": "#f8f9fb"
+    },
+    "networkTimeout": {
+        "request": 10000,
+        "downloadFile": 10000
+    }
+}

@@ -1,0 +1,9 @@
+<import src="../component/list/list.wxml" />
+<view class="container">
+    <scroll-view scroll-y>
+        <block wx:for="{{movieList}}" wx:key="{{index}}">
+            <template is="{{item.subject ? 'item-cloumn-subject' : 'item-cloumn'}}" data="{{...item}}" />
+        </block>
+        <template is="loading" data="{{shouldLoad}}" />
+    </scroll-view>
+</view>

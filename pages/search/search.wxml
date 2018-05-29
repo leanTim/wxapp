@@ -1,0 +1,18 @@
+<import src="../component/list/list.wxml" />
+<view class="container">
+    <view class="header">
+        <input bindblur="handleBlur" placeholder="告诉我你想看什么" auto-focus confirm-type="search" confirm-hold="true" />
+        <radio-group bindchange="radioChange">
+            <label>
+                <radio id="q" value="q" checked="{{checked}}">名称</radio>
+                <radio id="tag" value="tag" checked="{{!checked}}">分类</radio>
+            </label>
+        </radio-group>
+    </view>
+    <scroll-view class="list" scroll-y>
+        <block wx:for="{{movieList}}" wx:key="{{index}}">
+            <template is="{{item.subject ? 'item-cloumn-subject' : 'item-cloumn'}}" data="{{...item}}" />
+        </block>
+        <template is="loading" data="{{shouldLoad}}" />
+    </scroll-view>
+</view>

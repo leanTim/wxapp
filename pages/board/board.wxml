@@ -1,0 +1,90 @@
+<import src="../component/list/list.wxml" />
+<view class="container">
+    <view class="slide">
+        <swiper indicator-dots="{{true}}" autoplay="{{true}}">
+            <swiper-item wx:for="{{sorts[0].dataArr}}" wx:key="{{index}}">
+                <navigator url="../item/item?id={{item.id}}">
+                    <image src="{{item.images.large}}" mode="aspectFill" />
+                </navigator>
+            </swiper-item>
+        </swiper>
+    </view>
+    <view class="on-playing movie-list">
+        <navigator class="movie-list-title" url="../list/list?sort=in_theaters&&title={{sorts[0].title}}">
+            <text>{{sorts[0].title}}</text>
+            <image src="../../images/arrowright.png" />
+        </navigator>
+        <scroll-view scroll-x="true">
+            <view class="playing-movie-list flex-list">
+                <view wx:for="{{sorts[0].dataArr}}" wx:key="{{index}}">
+                    <template is="{{item.subject ? 'list-subject' : 'list'}}" data="{{...item}}" />
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="coming-soon movie-list">
+        <navigator class="movie-list-title" url="../list/list?sort=coming_soon&&title={{sorts[1].title}}">
+            <text>{{sorts[1].title}}</text>
+            <image src="../../images/arrowright.png" />
+        </navigator>
+        <scroll-view scroll-x="true">
+            <view class="playing-movie-list flex-list">
+                <view wx:for="{{sorts[1].dataArr}}" wx:key="{{index}}">
+                    <template is="{{item.subject ? 'list-subject' : 'list'}}" data="{{...item}}" />
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="weekly movie-list">
+        <navigator class="movie-list-title" url="../list/list?sort=weekly&&title={{sorts[2].title}}">
+            <text>{{sorts[2].title}}</text>
+            <image src="../../images/arrowright.png" />
+        </navigator>
+        <scroll-view scroll-x="true">
+            <view class="playing-movie-list flex-list">
+                <view wx:for="{{sorts[2].dataArr}}" wx:key="{{index}}">
+                    <template is="{{item.subject ? 'list-subject' : 'list'}}" data="{{...item}}"></template>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="new-movie movie-list">
+        <navigator class="movie-list-title" url="../list/list?sort=new_movies&&title={{sorts[3].title}}">
+            <text>{{sorts[3].title}}</text>
+            <image src="../../images/arrowright.png" />
+        </navigator>
+        <scroll-view scroll-x="true">
+            <view class="playing-movie-list flex-list">
+                <view wx:for="{{sorts[3].dataArr}}" wx:key="{{index}}">
+                    <template is="{{item.subject ? 'list-subject' : 'list'}}" data="{{...item}}"></template>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="top-250 movie-list">
+        <navigator class="movie-list-title" url="../list/list?sort=top250&&title={{sorts[4].title}}">
+            <text>{{sorts[4].title}}</text>
+            <image src="../../images/arrowright.png" />
+        </navigator>
+        <scroll-view scroll-x="true">
+            <view class="playing-movie-list flex-list">
+                <view wx:for="{{sorts[4].dataArr}}" wx:key="{{index}}">
+                    <template is="{{item.subject ? 'list-subject' : 'list'}}" data="{{...item}}"></template>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+    <view class="us-box movie-list">
+        <navigator class="movie-list-title" url="../list/list?sort=us_box&&title={{sorts[5].title}}">
+            <text>{{sorts[5].title}}</text>
+            <image src="../../images/arrowright.png" />
+        </navigator>
+        <scroll-view scroll-x="true">
+            <view class="playing-movie-list flex-list">
+                <view wx:for="{{sorts[5].dataArr}}" wx:key="{{index}}">
+                    <template is="{{item.subject ? 'list-subject' : 'list'}}" data="{{...item}}"></template>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+</view>

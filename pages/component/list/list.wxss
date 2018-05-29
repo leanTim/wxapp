@@ -1,0 +1,94 @@
+.movie-item {
+    display: flex;
+    flex-direction: column;
+    width: 180rpx;
+    margin: 10rpx;
+}
+
+.movie-item image {
+    width: 180rpx;
+    height: 250rpx;
+}
+
+.movie-item text {
+    text-align: center;
+    font-size: 22rpx;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.movie-list-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.movie-list-title image {
+    width: 20rpx;
+    height: 20rpx;
+}
+
+.all-movie-item image {
+    width: 128rpx;
+    height: 168rpx;
+    margin-right: 20rpx;
+}
+
+.all-movie-item {
+    display: flex;
+    flex-direction: row;
+    padding: 20rpx;
+    position: relative;
+    border-bottom: 1px solid #eee;
+}
+
+.all-movie-item .content {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+
+.all-movie-item .content .name {
+    font-size: 32rpx;
+    margin-bottom: 15rpx;
+}
+
+.all-movie-item .content .name-year {
+    font-size: 22rpx;
+    color: #c0c0c0;
+    margin-bottom: 15rpx;
+}
+
+.all-movie-item .content .director {
+    font-size: 24rpx;
+    color: #999;
+}
+
+.all-movie-item .score {
+    position: absolute;
+    padding: 10rpx;
+    width: 40rpx;
+    text-align: center;
+    line-height: 40rpx;
+    right: 20rpx;
+    top: 20rpx;
+    background-color: rgba(247, 76, 49, 0.8);
+    color: #fff;
+    border-radius: 20rpx;
+    font-size: 28rpx;
+}
+
+.tips {
+    font-size: 28rpx;
+    text-align: center;
+    padding: 50rpx;
+    color: #ccc;
+}
+
+.tips image {
+    width: 40rpx;
+    height: 40rpx;
+    margin-right: 20rpx;
+    vertical-align: middle;
+}
